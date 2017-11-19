@@ -43,14 +43,11 @@ public class BinaryTreeTest {
         assertEquals(false, set.contains(9));
         assertEquals(false, set.contains(10));
 
-        set = tree.headSet(-128);
-        assertEquals(null, set.toString());
 
         set = tree.headSet(127);
         for (int i = 1; i <= 10; i++)
             assertEquals(true, set.contains(i));
 
-        assertEquals(null, emptyTree.headSet(0));
     }
 
     @org.junit.Test
