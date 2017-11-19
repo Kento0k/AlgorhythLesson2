@@ -153,9 +153,9 @@ public class BinaryTree<T extends Comparable<T>> extends AbstractSet<T> implemen
     @NotNull
     @Override
     public SortedSet<T> headSet(T toElement) {
-        if(isEmpty())
-            return null;
         BinaryTree<T> newTree = new BinaryTree<>();
+        if(isEmpty())
+            throw new NoSuchElementException();
         Node<T> curNode= root;
         while(curNode.value.compareTo(toElement)!=0){
             if(curNode.value.compareTo(toElement)>0){
@@ -184,8 +184,9 @@ public class BinaryTree<T extends Comparable<T>> extends AbstractSet<T> implemen
     @NotNull
     @Override
     public SortedSet<T> tailSet(T fromElement) {
-        if(isEmpty())
-            return null;
+        if(isEmpty()) {
+            throw new NoSuchElementException();
+        }
         BinaryTree<T> newTree = new BinaryTree<>();
         Node<T> curNode = root;
         while(curNode.value.compareTo(fromElement)!=0){

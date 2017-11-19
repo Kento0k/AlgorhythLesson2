@@ -72,10 +72,6 @@ public class BinaryTreeTest {
         for (int i = 1; i <= 10; i++)
             assertEquals(true, set.contains(i));
 
-        set = tree.tailSet(127);
-        assertEquals(null, set.toString());
-
-        assertEquals(null, emptyTree.tailSet(0));
     }
 
 }
